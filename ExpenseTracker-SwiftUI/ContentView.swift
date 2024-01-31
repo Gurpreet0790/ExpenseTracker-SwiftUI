@@ -19,6 +19,8 @@ struct ContentView: View {
                 ToolbarItem {
                     Image(systemName: "bell.badge")
                         .renderingMode(.original)
+                        .symbolRenderingMode(.palette)
+                        .foregroundColor(.blue)
                 }
             }
         }
