@@ -11,16 +11,22 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ScrollView{
-                
+                VStack(alignment: .leading, spacing:  25){
+                    Text("Overview")
+                        .font(.title2)
+                        .bold()
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
             }
-            .background(Color.gray)
+            .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
                     Image(systemName: "bell.badge")
                         .renderingMode(.original)
                         .symbolRenderingMode(.palette)
-                        .foregroundColor(.blue)
+                        .foregroundStyle(Color.icon, .primary)
                 }
             }
         }
