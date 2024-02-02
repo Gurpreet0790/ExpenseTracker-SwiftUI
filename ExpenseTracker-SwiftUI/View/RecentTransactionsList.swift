@@ -34,6 +34,8 @@ struct RecentTransactionsList: View {
                 
             }
             .padding(.top)
+            
+            ForEach(transactionListVM)
         }
         .padding()
         .background(Color.systemBackgroundColor)
@@ -48,5 +50,8 @@ struct RecentTransactionsList: View {
         transactionListVM.transactions = transactionListPreviewData
         return transactionListVM
     }()
+    
+    
     RecentTransactionsList()
+    .environmentObject(transactionListVM)
 }
