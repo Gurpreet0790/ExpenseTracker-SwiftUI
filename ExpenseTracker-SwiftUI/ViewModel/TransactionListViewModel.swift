@@ -24,7 +24,9 @@ final class TransactionListViewModel: ObservableObject {
         
         URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { (data, response) -> Data in
+                print("data is", data)
                 print("response", response)
+                print("httpsResponse.statusCode", response as? HTTPURLResponse ?? "")
                 guard let httpsResponse = response as? HTTPURLResponse, httpsResponse.statusCode == 200 else {
                     dump(response) //Dump is like print but in a more readble format, good for looging objects
                     throw URLError(.badServerResponse)
@@ -42,7 +44,7 @@ final class TransactionListViewModel: ObservableObject {
                 }
                 } receiveValue: { [weak self] result in
                     self?.transactions = result
-                    dump(self?.transactions)
+//                    dump(self?.transactions)
                 }
                 .store(in: &cancellables)
     }
