@@ -35,7 +35,13 @@ struct RecentTransactionsList: View {
             }
             .padding(.top)
             
-            ForEach(transactionListVM)
+            
+            //MARK: - Recent Transactions List
+            ForEach(transactionListVM.transactions.prefix(5)) { transaction in
+                TransactionRow(transaction: transaction)
+                
+                Divider()
+            }
         }
         .padding()
         .background(Color.systemBackgroundColor)
