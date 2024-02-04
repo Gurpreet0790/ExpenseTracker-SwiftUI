@@ -52,13 +52,13 @@ struct RecentTransactionsList: View {
 }
 
 #Preview {
-    let transactionListVM: TransactionListViewModel = {
-        let transactionListVM = TransactionListViewModel()
-        transactionListVM.transactions = transactionListPreviewData
-        return transactionListVM
-    }()
+//    let transactionListVM: TransactionListViewModel = {
+//        let transactionListVM = TransactionListViewModel()
+//        transactionListVM.transactions = transactionListPreviewData
+//        return transactionListVM
+//    }()
     
     
-    RecentTransactionsList()
-    .environmentObject(transactionListVM)
+   RecentTransactionsList()
+//    .environmentObject(transactionListVM)
 }
