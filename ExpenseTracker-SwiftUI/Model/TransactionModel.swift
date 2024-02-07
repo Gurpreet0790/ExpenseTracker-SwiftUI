@@ -45,5 +45,29 @@ struct Category {
 }
 
 extension Category{
+    static let entertainment = Category(id: 1, name: "Entertainment", icon: .film)
+    static let billsAndUtilities = Category(id: 2, name: "Bills & Utilities", icon: .file_invoice_dollar)
+    static let autoAndTransport = Category(id: 3, name: "Auto & Transport", icon: .car_alt)
     
+    static let publicTransportation = Category(id: 4, name: "Public Transportation", icon: .film)
+    static let taxi = Category(id: 5, name: "Taxi", icon: .file_invoice_dollar)
+    static let moviesAndDVD = Category(id: 6, name: "Movies & DVD's", icon: .car_alt)
 }
+
+extension Category {
+    static let categories : [Category] = [
+        .entertainment,
+        .billsAndUtilities,
+        .autoAndTransport,
+
+    ]
+    
+    static let subCategories : [Category] = [
+        .publicTransportation,
+        .taxi,
+        .moviesAndDVD,
+    ]
+    
+    static let all : [Category] = categories + subCategories
+}
+
